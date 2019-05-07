@@ -1,0 +1,19 @@
+<!-- index.njk -->
+
+{% extends "homepage.njk" %}
+
+{% block loader %} 
+  {% include "partials/loader.njk" %}
+{% endblock %}
+
+{% block content %}
+
+  {% include "partials/nav.njk" %}
+  {% include "partials/slider.njk" %}
+  {% include "partials/cta-banner.njk" %}
+  {% include "partials/services.njk" %}
+  {% include "partials/reviews.njk" %}
+  {% include "partials/newsletter.njk" %}
+  {% include "partials/footer.njk" %}
+
+{% endblock %}
