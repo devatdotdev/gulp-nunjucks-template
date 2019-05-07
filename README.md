@@ -1,1 +1,1 @@
-# gulp-html-plate
+# gulp-nunjucks-template
