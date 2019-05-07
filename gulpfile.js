@@ -94,7 +94,7 @@ let jsWatch = jsSrc + '*.js';
 
 function javascript() {
   return gulp.src(jsOrder)
-    .pipe(concat(themename + '.min.js'))
+    .pipe(concat('scripts.min.js'))
     .pipe(uglify())
     .pipe(lineEndingCorrector())
     .pipe(gulp.dest(jsDist));
@@ -116,7 +116,7 @@ function images() {
 // HTML
 //
 
-let htmlSrc = src + 'html/';
+let htmlSrc = src + 'html/pages/';
 let htmlDist = dist;
 let htmlWatch = htmlSrc + "*.html";
 
@@ -134,10 +134,10 @@ function html() {
 
 let nunjucksSrc = src + 'nunjucks/pages/';
 let nunjucksDist = htmlSrc;
-let nunjucksWatch = nunjucksSrc + "**/*.+(html|njk)";
+let nunjucksWatch = src + "nunjucks/**/*.+(html|njk)";
 
 function nunjucks() {
-  return gulp.src(nunjucksWatch)
+  return gulp.src(nunjucksSrc + "**/*.njk")
     .pipe(nunjucksRender({
       path: [src + 'nunjucks/templates']
     })).on('error', log)
